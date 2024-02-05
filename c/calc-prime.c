@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <sys/time.h>
-
-typedef enum { false, true } bool;
+#include <stdbool.h>
 
 /* NUMBER VECTOR */
 
@@ -100,7 +99,7 @@ vector_uint* compute(const unsigned int target) {
 	return numbers;
 }
 
-void main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 	unsigned int target = 100000;
 
 	// Check for CLI parameter: target
@@ -125,6 +124,6 @@ void main(int argc, char *argv[]) {
 	
 	// Print results
 	printf("target:        %u\n", target);
-	printf("prime numbers: %u\n", numbers->_width);
+	printf("prime numbers: %zu\n", numbers->_width);
 	printf("time:          %llu ms\n", duration);
 }
